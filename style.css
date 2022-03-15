@@ -48,13 +48,12 @@
 
  .search-chat{
      width: 100%;
-     height: 5%;
+     height: 40px;
  }
 
 .chat{
     width: 100%;
     height: 10%;
-    border: 1px solid red;
 }
 
 img{
@@ -75,12 +74,41 @@ img{
 
 .chat-text{
     position: relative;
-    bottom: 50px;
+    bottom: 55px;
     left: 80px;
 }
 
 .nome-mio{
     position: relative;
     bottom: 15px;
-    font-size: 13px;
+}
+
+.icone-top{
+    position: relative;
+    bottom: 30%;
+    left: 55%;
+    margin: 5px;
+    color: grey;
+    font-size: 25px;
+}
+
+.icona-silenzioso{
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    left: 20px;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    color: #8EDAFC;
+}
+
+.ric-not{
+    position: relative;
+    bottom: 40px;
+    left: 90px;
+}
+
+u{
+    color: grey;
 }
