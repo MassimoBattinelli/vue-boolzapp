@@ -20,8 +20,8 @@
     width: 80vw;
     height: 90vh;
     position: absolute;
-    top: 25%;
-    left: 27%;
+    top: 20%;
+    left: 22%;
     margin: -100px 0 0 -175px;
     background-color: white;
  }
@@ -31,6 +31,7 @@
      height: 100%;
      border: 1px solid black;
      overflow: scroll;
+     overflow-x: hidden;
  }
 
  .top-cont-1{
@@ -47,6 +48,7 @@
 
  .search-chat{
      width: 100%;
+     height: 5%;
  }
 
 .chat{
@@ -63,16 +65,22 @@ img{
 }
 
 .antepr-chat{
-    font-size: 8px;
+    font-size: 12px;
     color: grey;
 }
 
 .nome-contatto{
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .chat-text{
     position: relative;
-    bottom: 40px;
-    left: 60px;
+    bottom: 50px;
+    left: 80px;
+}
+
+.nome-mio{
+    position: relative;
+    bottom: 15px;
+    font-size: 13px;
 }
