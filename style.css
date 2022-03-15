@@ -30,22 +30,49 @@
      width: 40%;
      height: 100%;
      border: 1px solid black;
+     overflow: scroll;
  }
 
  .top-cont-1{
      width: 100%;
      height: 10%;
-     border: 1px solid black;
+     background-color: #EAEAEA;
  }
 
  .notifiche-cont-1{
      width: 100%;
      height: 10%;
-     border: 1px solid blue;
+     background-color: #8EDAFC;
  }
 
  .search-chat{
      width: 100%;
  }
 
- 
+.chat{
+    width: 100%;
+    height: 10%;
+    border: 1px solid red;
+}
+
+img{
+    width: 15%;
+    height: 90%;
+    border-radius: 30px;
+    margin-top: 3px;
+}
+
+.antepr-chat{
+    font-size: 8px;
+    color: grey;
+}
+
+.nome-contatto{
+    font-size: 12px;
+}
+
+.chat-text{
+    position: relative;
+    bottom: 40px;
+    left: 60px;
+}
