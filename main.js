@@ -13,7 +13,7 @@ var app= new Vue({
       contacts: [
         {
           name: "Michele",
-          avatar: 'img/avatar2.jpg',
+          avatar: 'img/avatar_2.jpg',
           visible: true,
           find:true,
   
@@ -42,7 +42,7 @@ var app= new Vue({
         },
         {
           name: 'Fabio',
-          avatar: 'img/avatar3.jpg',
+          avatar: 'img/avatar_3.jpg',
           visible: false,
           find:true,
           log: "ultimo accesso oggi alle: "+ dayjs(new Date()).subtract(126,'minute').format('HH:mm:ss').toString(),
@@ -106,7 +106,7 @@ var app= new Vue({
       newSentMesseage: function (text,date,status) {
           var adresses=this.contacts[this.indexChat].messages;
           setTimeout(function(){
-          text="OK";
+          text="Ok";
           date=dayjs(new Date()).format('DD/MM/YYYY HH:mm:ss');
           status='sent';
           isHiddenOptions= true,
