@@ -1,131 +1,111 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>boolzapp</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js" integrity="sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
-<head>
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <link rel="stylesheet" href="style.css">
-  <title>Boolzapp</title>
-</head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="background">
+      <!--VUE-->
+      <div id="app">
 
-<body>
-  <div id="app" class="container">
-    <!-- contenitore sx -->
-    <div class="left">
-      <div class="header-left">
-        <div class="header-left-logo">
-          <img src="img/avatar_1.jpg" alt="Nome Utente">
-          <h3>Nome Utente</h3>
-        </div>
-        <div class="header-left-icons">
-          <i class="fas fa-circle-notch"></i>
-          <i class="fas fa-comment-alt"></i>
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-      </div>
-      <div class="left-disclaimer">
-        <div class="left-disclaimer-logo">
-          <i class="fa fa-bell-slash" aria-hidden="true"></i>
-        </div>
-        <div class="left-disclaimer-text">
-          <h3>Ricevi notifiche di nuovi messaggi</h3>
-          <a href="#">Attiva notifiche desktop</a>
-        </div>
-      </div>
-      <div class="left-searchbar">
-        <label class="search-label" for="search">
-          <i class="fa fa-search" aria-hidden="true" ></i>
-        </label>
-        <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat" name="search">
-      </div>
-      <div class="contacts">
-        <div class="contact active">
-          <div class="contact-logo">
-            <img src="img/avatar_2.jpg" alt="Michele">
-          </div>
-          <div class="contact-info">
-            <h3>
-              <span class="contact-name">Michele</span>
-              <span class="time f-right">
-					10/01/2020 16:15:22
-              </span>
-            </h3>
-            <small>Tutto fatto! ...</small>
-          </div>
-        </div>
-
-		  <div class="contact">
-          <div class="contact-logo">
-            <img src="img/avatar_3.jpg" alt="Fabio">
-          </div>
-          <div class="contact-info">
-            <h3>
-              <span class="contact-name">Fabio</span>
-              <span class="time f-right">
-					20/03/2020 16:35:00
-              </span>
-            </h3>
-            <small>Mi piacerebbe ma devo andare a ...</small>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /contenitore sx -->
-    <!-- contenitore dx -->
-    <div class="right">
-      <div class="header-right">
-        <div class="header-right-logo">
-          <img src="img/avatar_2.jpg" alt="Michele">
-          <h3><span id="header-right-contact-name">Michele</span> <br> <small
-              class="time">Ultimo accesso oggi alle</small></h3>
-        </div>
-        <div class="header-right-icons">
-          <i class="fas fa-search"></i>
-          <i class="fas fa-paperclip"></i>
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-      </div>
-      <div class="right-messages-container">
-        <div class="right-messages">
-          <div class='message sent'>
-            <span class="message-text">Ciao come stai?</span>
-            <span class="message-time">20/03/2020 16:30:00</span>
-            <i class="fa fa-chevron-down f-right message-options"></i>
-            <div class="message-options-panel" style="display: none;">
-              <div class="message-info">Info messaggio</div>
-              <div class="message-destroy">Cancella messaggio</div>
+        <aside id="navigation_app">
+          <div id="header_navigation_app" class="clearfix">
+            <div id="user_info">
+              <img class="avatar" src="img/icons/avatars/mio_avatar.png" alt="">
+              <p id="user_id" >
+                {{user.name}} {{user.surname}}
+              </p>
+            </div>
+            <div id="btn_user" class="float_right">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
             </div>
           </div>
 
-			 <div class='message received'>
-            <span class="message-text">Bene grazie! Stasera ci vediamo?</span>
-            <span class="message-time">20/03/2020 16:30:55</span>
-            <i class="fa fa-chevron-down f-right message-options"></i>
-            <div class="message-options-panel" style="display: none;">
-              <div class="message-info">Info messaggio</div>
-              <div class="message-destroy">Cancella messaggio</div>
+          <div id="banner_notify">
+              <i class="fas fa-bell-slash"></i>
+              <ul id="text_notify">
+                <li>
+                  <h2>Ricevi notifiche di nuovi messaggi</h2>
+                </li>
+                <li>
+                  <a href="#">Attiva notifiche desktop</a>
+                </li>
+              </ul>
+          </div>
+
+          <div id="form_search">
+            <i class="fas fa-search"></i>
+            <input   v-on:keydown="search()"v-model="searchName" placeholder="Cerca o inizia un nuova chat" type="text" name="" value="">
+          </div>
+
+
+          <div id="container_previews_chat">
+
+            <div v-for="(element, index) in contacts" @click="activeChat(index)" :class='(element.visible)? "active":""'  v-if="element.find" class="previews_chat">
+              <img class="avatar" :src="element.avatar">
+                <ul class="previews" >
+                  <li>{{element.name}}</li>
+                  <li class="previews_message">{{element.messages[(element.messages.length) - 1].text}}</li>
+                </ul>
+                <span class="date" >{{element.messages[(element.messages.length) - 1].date}}</span>
+            </div>
+
+          </div>
+
+        </aside>
+
+
+
+        <div id="selected_chat_view">
+
+           <div  id="header_selected_chat">
+             <div id="header_selected_chat_left">
+               <img class="avatar" :src="contacts[indexChat].avatar" alt="">
+                <ul class="header_chat_info">
+                  <li>{{contacts[indexChat].name}}</li>
+                  <li class="log_acces">{{contacts[indexChat].log}}</li>
+                </ul>
+              </div>
+              <div id="header_selected_chat_right">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+
+          </div>
+          <!-- CHAT -->
+          <div  id="container_messages" class="clearfix">
+            <div v-for="(element,index) in contacts[indexChat].messages" @click="element.isHiddenOptions= !element.isHiddenOptions" :class=" (element.status=='sent') ? 'sent_message':'recevied_message' ">
+              {{element.text}}
+              <p class="date_message">{{element.date}}</p>
+              <div v-if="!element.isHiddenOptions" class="option_menu">
+                <ul class="btn_option">
+                  <li><button @click="removeMessage(index)" type="button" name="button">Cancella Messaggio</button></li>
+                  <li><button type="button" name="button">Info Messaggio</button></li>
+                </ul>
+              </div>
             </div>
           </div>
+
+          <div id="form_instantchat">
+            <i class="far fa-smile"></i>
+            <input  v-on:keyup.enter="submit()" type="text" v-model="Newtext"  placeholder="scrivi un messaggio" name="" value="">
+            <i class="fas fa-microphone"></i>
+          </div>
+
         </div>
+
       </div>
-      <div class="right-footer">
-        <div class="right-footer-icon f-left">
-          <i class="far fa-smile"></i>
-        </div>
-        <input class="new-message-inputs" placeholder="Scrivi un messaggio">
-        <div class="right-footer-icon f-right">
-          <i class="fa fa-microphone" aria-hidden="true"></i>
-        </div>
-      </div>
+
+      <script src="main.js" charset="utf-8"></script>
     </div>
-    <!-- /contenitore dx -->
-  </div>
-
-  <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
-
-
-
