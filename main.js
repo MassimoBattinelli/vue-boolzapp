@@ -72,6 +72,8 @@ var app= new Vue({
 
   methods: {
 
+    
+
     activeChat: function (index) {
 
 
@@ -119,6 +121,20 @@ var app= new Vue({
           }
         )
         }, 1000);
+    },
+
+    search:function () {
+      let findKey=this.find;
+      let SearchName=this.searchName.toLowerCase();
+
+      this.contacts.forEach((element, i) => {
+        let name=element.name.toLowerCase();
+        if(!name.includes(SearchName) && SearchName!=""){
+          element.find=false;
+        } else {
+          element.find=true;
+        }
+      });
 
     },
 
